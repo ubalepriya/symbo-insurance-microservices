@@ -1,2 +1,2 @@
 # symbo-insurance-microservices
-Spring Ccloud Microservices Assignment by Priyanka Lokhande
+Spring Cloud Microservices Assignment by Priyanka Lokhande
