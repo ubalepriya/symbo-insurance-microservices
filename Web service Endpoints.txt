@@ -1,0 +1,77 @@
+I) Authentication Service
+D:\Git_Dev\Symbo_Insurance_Test\microservicetest
+Port 8080
+1) /getUserDetails/userId/{userId}
+http://localhost:8080/getUserDetails/userId/1
+http://localhost:8765/user-service/getUserDetails/userId/1
+
+2) /authenticateUser/userId/{userId}/password/{password} - POST request
+http://localhost:8080/authenticateUser/
+http://localhost:8765/user-service/authenticateUser/
+Input : 
+{
+  "userId": "1",
+  "password" : "abc@123"
+  
+}
+
+3) saveDeliveryAddress - POST request
+http://localhost:8765/user-service/saveDeliveryAddress
+Input : 
+{
+  "userId": "1",
+  "address" : {
+     "addressType" : "OFFICE",
+    "pinCode" : "400091",
+    "addLine1" : "RSC 14",
+    "addLine2" : "C/6",
+    "city" : "Mumbai",
+    "state" : "Maharashtra",
+    "country" : "India"
+  } 
+}
+ 
+II) Prodcuts Service
+Port 8081
+1) /getProduct/productId/{productId}
+http://localhost:8081/getProduct/productId/3
+http://localhost:8765/product-service/getProduct/productId/3
+
+2) /checkProductStock/productId/{productId}
+http://localhost:8081/checkProductStock/productId/1
+http://localhost:8765/product-service/checkProductStock/productId/1
+
+3) /reduceStock/productId/{productId}
+http://localhost:8765/product-service//reduceStock/productId/1
+
+III) Cart service
+Port 8082
+1) /addToCart/userId/{userId}/productId/{productId}
+http://localhost:8082/addToCart/userId/1/productId/2
+http://localhost:8765/cart-service/addToCart/userId/1/productId/2
+
+2) /checkout/userId/{userId}
+http://localhost:8082/checkout/userId/1
+http://localhost:8765/cart-service/checkout/userId/1
+
+3) /viewOrders/userId/{userId}
+http://localhost:8082/viewOrders/userId/1
+http://localhost:8765/cart-service/viewOrders/userId/1
+
+4) /viewCart/userId/{userId}
+http://localhost:8082/viewCart/userId/2
+http://localhost:8765/cart-service/viewCart/userId/1
+
+5) /giveReview - POST request
+
+
+IV) Eureka Naming Server
+Port : 8761
+
+V) Netflix Zuul API Gateway
+Port : 8765
+
+VI) payment service 
+1) /processPayment/orderId/{orderId}
+
+9b9e952e-1e86-42ea-a443-47e55facb7fd
